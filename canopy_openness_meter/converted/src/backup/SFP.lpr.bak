@@ -1,13 +1,19 @@
 program SFP;
 
-uses
-  Forms,
-  MainUnit in 'MainUnit.pas' {MainForm};
+{$MODE Delphi}
 
-{$R *.RES}
+uses
+  Forms, Interfaces,
+  MainUnit in 'MainUnit.pas' {MainForm},
+  Unit3 in 'unit3.pas' {f_about};
+
+{$R *.res}
 
 begin
   Application.Initialize;
   Application.CreateForm(TMainForm, MainForm);
+
+  Application.CreateForm(Tf_about, f_about);
+
   Application.Run;
 end.

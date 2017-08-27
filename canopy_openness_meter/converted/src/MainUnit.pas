@@ -92,6 +92,7 @@ type
     Edit32: TEdit;
     Edit33: TEdit;
     Button4: TButton;
+    Button5: TButton;
     Edit27: TEdit;
     Label40: TLabel;
     OpenDialog1: TOpenPictureDialog;
@@ -120,6 +121,7 @@ type
     procedure Image1MouseMove(Sender: TObject; Shift: TShiftState; X,
       Y: Integer);
     procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
     procedure CheckBox3Click(Sender: TObject);
     procedure SaveImageButtonClick(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -137,6 +139,8 @@ var
   controlacheckbox:boolean;  // se true executa checkebox 2 senão executa checkebox 3
   x1,x2,y1,y2:integer;
 implementation
+
+uses Unit2;
 
 {$R *.lfm}
 
@@ -536,6 +540,11 @@ begin
      end;
      closefile(fi);
   end;
+end;
+
+procedure TMainForm.Button5Click(Sender: TObject);
+begin
+  f_about.Show;
 end;
 
 procedure TMainForm.CheckBox3Click(Sender: TObject);

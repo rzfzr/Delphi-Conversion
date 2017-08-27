@@ -1,9 +1,11 @@
 unit MainUnit;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   StdCtrls, ExtCtrls, SFPLib, Variants, ExtDlgs;
 
 type
@@ -90,6 +92,7 @@ type
     Edit32: TEdit;
     Edit33: TEdit;
     Button4: TButton;
+    Button5: TButton;
     Edit27: TEdit;
     Label40: TLabel;
     OpenDialog1: TOpenPictureDialog;
@@ -118,6 +121,7 @@ type
     procedure Image1MouseMove(Sender: TObject; Shift: TShiftState; X,
       Y: Integer);
     procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
     procedure CheckBox3Click(Sender: TObject);
     procedure SaveImageButtonClick(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -132,11 +136,11 @@ var
   SFP: SFPvalue;
   MainForm: TMainForm;
   controle,
-  controlacheckbox:boolean;  // se true executa checkebox 2 sen„o executa checkebox 3
+  controlacheckbox:boolean;  // se true executa checkebox 2 sen√£o executa checkebox 3
   x1,x2,y1,y2:integer;
 implementation
 
-{$R *.DFM}
+{$R *.lfm}
 
 procedure TMainForm.Button1Click(Sender: TObject);
 begin
@@ -199,7 +203,7 @@ Edit2.text:=Inttostr(m);
 Edit17.text:=Inttostr(m);
 m:= b-v;  if (m<0) then m:=0;
 Edit3.text:=Inttostr(m);
-// m·ximos rgb
+// m√°ximos rgb
 m:= r+v;  if (m>255) then m:=255;
 Edit4.text:=Inttostr(m);
 Edit19.text:=Inttostr(m);
@@ -360,8 +364,8 @@ begin
       not((r=StrToInt(Edit34.Text)) and (g=StrToInt(Edit35.Text)) and (b=StrToInt(Edit36.Text)))
       or (CheckBox4.Checked = false)) then      // eu e alguns amigos costumamoss dizer que para uma
       begin                                     // gambiarra ser perfeita precisamos de um arame e um
-                                                // brasileiro, mas sÛ agora sei que sem a aritmÈtica
-        if (g=0)then rg:= 1e30 else rg:=r/g;    // booleana gambiarra n„o tem graÁa :)
+                                                // brasileiro, mas s√≥ agora sei que sem a aritm√©tica
+        if (g=0)then rg:= 1e30 else rg:=r/g;    // booleana gambiarra n√£o tem gra√ßa :)
         if (b=0)then
         begin
            rb:= 1e30;
@@ -534,6 +538,11 @@ begin
      end;
      closefile(fi);
   end;
+end;
+
+procedure TMainForm.Button5Click(Sender: TObject);
+begin
+  f_about.Show;
 end;
 
 procedure TMainForm.CheckBox3Click(Sender: TObject);
