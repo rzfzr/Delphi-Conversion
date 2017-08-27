@@ -22,3 +22,10 @@ Strings went from .dfm to .lfm
 	Units not found: none, however had to add Windows to uses clause, because I have not found any equivalent to .Beep() that receives frequency and duration  
 	Working, but not multiplataform  
     Did not add extra form, as there is already some space in the main  
+    
+*	SFM:  
+	No .dpr file found  
+	
+*	SH1_2:  
+	Units not found: none  
+   

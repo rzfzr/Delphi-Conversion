@@ -1,0 +1,76 @@
+object Form1: TForm1
+  Left = 310
+  Top = 115
+  Width = 380
+  Height = 451
+  Caption = 'Alan -  alan@dcop.uel.br'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  object Panel1: TPanel
+    Left = 8
+    Top = 8
+    Width = 361
+    Height = 361
+    TabOrder = 0
+    object ScrollBox1: TScrollBox
+      Left = 6
+      Top = 6
+      Width = 337
+      Height = 345
+      TabOrder = 0
+      object Image1: TImage
+        Left = 8
+        Top = 0
+        Width = 321
+        Height = 337
+        AutoSize = True
+        OnMouseDown = Image1MouseDown
+      end
+    end
+  end
+  object Button1: TButton
+    Left = 16
+    Top = 384
+    Width = 75
+    Height = 25
+    Caption = 'Load Bitmap'
+    TabOrder = 1
+    OnClick = Button1Click
+  end
+
+    object Button3: TButton
+    Left = 150
+    Top = 384
+    Width = 75
+    Height = 25
+    Caption = 'About Us'
+    TabOrder = 1
+    OnClick = About1Click
+  end
+
+  object Button2: TButton
+    Left = 248
+    Top = 384
+    Width = 75
+    Height = 25
+    Caption = 'Save Data'
+    Enabled = False
+    TabOrder = 2
+    OnClick = Button2Click
+  end
+  object OpenDialog1: TOpenDialog
+    Filter = 'Bitmap|*.bmp'
+    Left = 128
+    Top = 384
+  end
+  object SaveDialog1: TSaveDialog
+    Left = 184
+    Top = 384
+  end
+end

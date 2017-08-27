@@ -1,0 +1,50 @@
+struct  Tpilha{
+                   int px,py,pV,pN;
+                   struct  Tpilha *Proximo;
+           };
+ class  CPilha  {
+    private:
+         struct  Tpilha   *topo;    // somente uma variável
+   public:
+         void CPilha::Insere(int x,int y,int V,int N);
+         struct  Tpilha * CPilha::Remover(void);
+         ~CPilha(void);		// Destrutor
+         CPilha(void);               // Construtor
+};
+CPilha::~CPilha()
+{
+  struct Tpilha *p;
+  while (topo != NULL)
+  {
+   p=topo;
+   topo= topo->Proximo;
+   delete p;
+  }
+}
+CPilha::CPilha()
+{
+    topo = NULL;
+}
+
+void CPilha::Insere(int x,int y,int V,int N)
+{
+  struct Tpilha *p;
+   p = new (struct Tpilha);
+   p->px = x;
+   p->py = y;
+   p->pV = V;
+   p->pN =  N;
+   p->Proximo = topo;
+   topo = p;
+}
+struct  Tpilha * CPilha::Remover(void)
+{  struct Tpilha *p;
+  double auxx;
+  if (topo!=NULL)
+  {
+   p = topo;
+   topo = p->Proximo;
+   return p;
+  }
+  else return topo;
+}
