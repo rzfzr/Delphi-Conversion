@@ -1,0 +1,42 @@
+Hint: * Converting file C:\Users\rzfzr\Desktop\GitGud\Delphi-Conversion\Diapasão digital\converted\Diapasao_digital.dpr *
+Hint: Added defines -dBorland -dVer150 -dDelphi7 -dCompiler6_Up -dPUREPASCAL in custom options
+Hint: Found all unit files
+Hint: * Fixing used units for file C:\Users\rzfzr\Desktop\GitGud\Delphi-Conversion\Diapasão digital\converted\Diapasao_digital.dpr *
+Hint: 
+Hint: *** Converting unit files belonging to project/package ***
+Hint: * Converting file C:\Users\rzfzr\Desktop\GitGud\Delphi-Conversion\Diapasão digital\converted\Diapasao.pas *
+Hint: Changed encoding from cp1252 to UTF-8
+Hint: Changed encoding from cp1252 to UTF-8
+Hint: Replaced unit "Windows" with "LCLIntf, LCLType, LMessages" in uses section.
+Hint: 
+Hint: *** Fixing used units and Repairing form files ***
+Hint: * Repairing form file C:\Users\rzfzr\Desktop\GitGud\Delphi-Conversion\Diapasão digital\converted\Diapasao.lfm *
+Hint: Removed property "TextHeight".
+Hint: Removed property "OldCreateOrder".
+Hint: Changed Top coord of TBitBtn from "112" to "98" inside TGroupBox.
+Hint: Changed Left coord of TBitBtn from "104" to "102" inside TGroupBox.
+Hint: Changed Top coord of TEdit from "40" to "26" inside TGroupBox.
+Hint: Changed Left coord of TEdit from "192" to "190" inside TGroupBox.
+Hint: Changed Top coord of TComboBox from "76" to "62" inside TGroupBox.
+Hint: Changed Left coord of TComboBox from "192" to "190" inside TGroupBox.
+Hint: Changed Top coord of TLabel from "78" to "64" inside TGroupBox.
+Hint: Changed Left coord of TLabel from "8" to "6" inside TGroupBox.
+Hint: Changed Top coord of TLabel from "46" to "32" inside TGroupBox.
+Hint: Changed Left coord of TLabel from "56" to "54" inside TGroupBox.
+Hint: Changed Top coord of TComboBox from "44" to "30" inside TGroupBox.
+Hint: Changed Left coord of TComboBox from "192" to "190" inside TGroupBox.
+Hint: Changed Top coord of TBitBtn from "112" to "98" inside TGroupBox.
+Hint: Changed Left coord of TBitBtn from "110" to "108" inside TGroupBox.
+Hint: Changed Top coord of TComboBox from "76" to "62" inside TGroupBox.
+Hint: Changed Left coord of TComboBox from "192" to "190" inside TGroupBox.
+Hint: Changed Top coord of TComboBox from "12" to "0" inside TGroupBox.
+Hint: Changed Left coord of TComboBox from "192" to "190" inside TGroupBox.
+Hint: Changed Top coord of TLabel from "78" to "64" inside TGroupBox.
+Hint: Changed Left coord of TLabel from "8" to "6" inside TGroupBox.
+Hint: Changed Top coord of TLabel from "14" to "0" inside TGroupBox.
+Hint: Changed Left coord of TLabel from "72" to "70" inside TGroupBox.
+Hint: Changed Top coord of TLabel from "46" to "32" inside TGroupBox.
+Hint: Changed Left coord of TLabel from "56" to "54" inside TGroupBox.
+Hint: * Fixing used units for file C:\Users\rzfzr\Desktop\GitGud\Delphi-Conversion\Diapasão digital\converted\Diapasao.pas *
+Hint: Conversion took: 00:00:01
+Hint: Conversion Ready.
