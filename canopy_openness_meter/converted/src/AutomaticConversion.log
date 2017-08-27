@@ -1,0 +1,65 @@
+Hint: * Converting file C:\Users\rzfzr\Desktop\GitGud\Delphi-Conversion\canopy_openness_meter\converted\src\SFP.dpr *
+Hint: Added defines -dBorland -dVer150 -dDelphi7 -dCompiler6_Up -dPUREPASCAL in custom options
+Hint: Found all unit files
+Hint: * Fixing used units for file C:\Users\rzfzr\Desktop\GitGud\Delphi-Conversion\canopy_openness_meter\converted\src\SFP.dpr *
+Hint: 
+Hint: *** Converting unit files belonging to project/package ***
+Hint: * Converting file C:\Users\rzfzr\Desktop\GitGud\Delphi-Conversion\canopy_openness_meter\converted\src\MainUnit.pas *
+Hint: Changed encoding from cp1252 to UTF-8
+Hint: Replaced unit "Windows" with "LCLIntf, LCLType, LMessages" in uses section.
+Hint: 
+Hint: *** Converting unit files found during conversion ***
+Hint: * Converting file C:\Users\rzfzr\Desktop\GitGud\Delphi-Conversion\canopy_openness_meter\converted\src\SFPLib.pas *
+Hint: Replaced unit "Windows" with "LCLIntf, LCLType, LMessages" in uses section.
+Hint: 
+Hint: *** Fixing used units and Repairing form files ***
+Hint: * Repairing form file C:\Users\rzfzr\Desktop\GitGud\Delphi-Conversion\canopy_openness_meter\converted\src\MainUnit.lfm *
+Hint: Removed property "OptionsEx".
+Hint: Removed property "TextHeight".
+Hint: Removed property "OldCreateOrder".
+Hint: Changed Top coord of TEdit from "20" to "18" inside TPanel.
+Hint: Changed Left coord of TEdit from "320" to "318" inside TPanel.
+Hint: Changed Top coord of TButton from "20" to "18" inside TPanel.
+Hint: Changed Left coord of TButton from "567" to "565" inside TPanel.
+Hint: Changed Top coord of TLabel from "8" to "6" inside TPanel.
+Hint: Changed Left coord of TLabel from "32" to "30" inside TPanel.
+Hint: Changed Top coord of TLabel from "24" to "22" inside TPanel.
+Hint: Changed Left coord of TLabel from "56" to "54" inside TPanel.
+Hint: Changed Top coord of TLabel from "4" to "2" inside TPanel.
+Hint: Changed Left coord of TLabel from "408" to "406" inside TPanel.
+Hint: Changed Top coord of TLabel from "68" to "66" inside TPanel.
+Hint: Changed Left coord of TLabel from "528" to "526" inside TPanel.
+Hint: Changed Top coord of TLabel from "68" to "66" inside TPanel.
+Hint: Changed Left coord of TLabel from "440" to "438" inside TPanel.
+Hint: Changed Top coord of TLabel from "52" to "50" inside TPanel.
+Hint: Changed Left coord of TLabel from "448" to "446" inside TPanel.
+Hint: Changed Top coord of TLabel from "52" to "50" inside TPanel.
+Hint: Changed Left coord of TLabel from "528" to "526" inside TPanel.
+Hint: Changed Top coord of TLabel from "36" to "34" inside TPanel.
+Hint: Changed Left coord of TLabel from "448" to "446" inside TPanel.
+Hint: Changed Top coord of TLabel from "20" to "18" inside TPanel.
+Hint: Changed Left coord of TLabel from "640" to "638" inside TPanel.
+Hint: Changed Top coord of TLabel from "36" to "34" inside TPanel.
+Hint: Changed Left coord of TLabel from "720" to "718" inside TPanel.
+Hint: Changed Top coord of TLabel from "4" to "2" inside TPanel.
+Hint: Changed Left coord of TLabel from "720" to "718" inside TPanel.
+Hint: Changed Top coord of TLabel from "4" to "2" inside TPanel.
+Hint: Changed Left coord of TLabel from "568" to "566" inside TPanel.
+Hint: Changed Top coord of TLabel from "20" to "18" inside TPanel.
+Hint: Changed Left coord of TLabel from "448" to "446" inside TPanel.
+Hint: Changed Top coord of TLabel from "52" to "50" inside TPanel.
+Hint: Changed Left coord of TLabel from "640" to "638" inside TPanel.
+Hint: Changed Top coord of TLabel from "36" to "34" inside TPanel.
+Hint: Changed Left coord of TLabel from "528" to "526" inside TPanel.
+Hint: Changed Top coord of TLabel from "20" to "18" inside TPanel.
+Hint: Changed Left coord of TLabel from "528" to "526" inside TPanel.
+Hint: Changed Top coord of TLabel from "20" to "18" inside TPanel.
+Hint: Changed Left coord of TLabel from "720" to "718" inside TPanel.
+Hint: Changed Top coord of TLabel from "52" to "50" inside TPanel.
+Hint: Changed Left coord of TLabel from "728" to "726" inside TPanel.
+Hint: Changed Top coord of TScrollBox from "8" to "6" inside TPanel.
+Hint: Changed Left coord of TScrollBox from "8" to "6" inside TPanel.
+Hint: * Fixing used units for file C:\Users\rzfzr\Desktop\GitGud\Delphi-Conversion\canopy_openness_meter\converted\src\MainUnit.pas *
+Hint: * Fixing used units for file C:\Users\rzfzr\Desktop\GitGud\Delphi-Conversion\canopy_openness_meter\converted\src\SFPLib.pas *
+Hint: Conversion took: 00:00:01
+Hint: Conversion Ready.

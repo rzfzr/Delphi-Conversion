@@ -1,0 +1,27 @@
+Hint: * Converting file C:\Users\rzfzr\Desktop\GitGud\Delphi-Conversion\Umidade Relativa\converted\Umidade_relativa.dpr *
+Hint: Changed encoding from cp1252 to UTF-8
+Hint: Added defines -dBorland -dVer150 -dDelphi7 -dCompiler6_Up -dPUREPASCAL in custom options
+Hint: Found all unit files
+Hint: * Fixing used units for file C:\Users\rzfzr\Desktop\GitGud\Delphi-Conversion\Umidade Relativa\converted\Umidade_relativa.dpr *
+Hint: 
+Hint: *** Converting unit files belonging to project/package ***
+Hint: * Converting file C:\Users\rzfzr\Desktop\GitGud\Delphi-Conversion\Umidade Relativa\converted\Unit1.pas *
+Hint: Changed encoding from cp1252 to UTF-8
+Hint: Replaced unit "Windows" with "LCLIntf, LCLType, LMessages" in uses section.
+Hint: * Converting file C:\Users\rzfzr\Desktop\GitGud\Delphi-Conversion\Umidade Relativa\converted\Unit2.pas *
+Hint: Changed encoding from cp1252 to UTF-8
+Hint: Removed unit "jpeg" in uses section.
+Hint: Replaced unit "Windows" with "LCLIntf, LCLType, LMessages" in uses section.
+Hint: 
+Hint: *** Fixing used units and Repairing form files ***
+Hint: * Repairing form file C:\Users\rzfzr\Desktop\GitGud\Delphi-Conversion\Umidade Relativa\converted\Unit1.lfm *
+Hint: Removed property "TextHeight".
+Hint: Removed property "OldCreateOrder".
+Hint: Removed property "Icon.Data".
+Hint: * Fixing used units for file C:\Users\rzfzr\Desktop\GitGud\Delphi-Conversion\Umidade Relativa\converted\Unit1.pas *
+Hint: * Repairing form file C:\Users\rzfzr\Desktop\GitGud\Delphi-Conversion\Umidade Relativa\converted\Unit2.lfm *
+Hint: Removed property "TextHeight".
+Hint: Removed property "OldCreateOrder".
+Hint: * Fixing used units for file C:\Users\rzfzr\Desktop\GitGud\Delphi-Conversion\Umidade Relativa\converted\Unit2.pas *
+Hint: Conversion took: 00:01:54
+Hint: Conversion Ready.

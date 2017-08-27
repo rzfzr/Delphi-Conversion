@@ -1,0 +1,173 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ExtCtrls, Buttons, Menus, OleCtrls, VCSpell3, Math;
+
+type
+  TForm1 = class(TForm)
+    lbl_temperatura_seco: TLabel;
+    edt_temp_seco: TEdit;
+    edt_temp_umido: TEdit;
+    lbl_temperatura_umido: TLabel;
+    lbl_pressao_atmosf: TLabel;
+    edt_pressao: TEdit;
+    lbl_valores: TLabel;
+    lbl_titulo: TLabel;
+    lbl_resultados: TLabel;
+    lbl_ponto_orvalho: TLabel;
+    lbl_kelvin: TLabel;
+    lbl_celsius: TLabel;
+    lbl_umidade_relativa: TLabel;
+    lbl_porcentagem: TLabel;
+    lbl_res_orv_c: TLabel;
+    lbl_res_orv_k: TLabel;
+    lbl_umidade_result: TLabel;
+    btbtn_calc: TBitBtn;
+    lbl_pressao_vapor: TLabel;
+    lbl_pressaomaximavapor: TLabel;
+    MainMenu1: TMainMenu;
+    Home1: TMenuItem;
+    RoteiroTerico1: TMenuItem;
+    RoteiroPrtico1: TMenuItem;
+    Vdeo1: TMenuItem;
+    About1: TMenuItem;
+    lbl_c: TLabel;
+    lbl_termometro_seco_k: TLabel;
+    lbl_k: TLabel;
+    lbl_kPa_1: TLabel;
+    lbl_pressao_mmhg: TLabel;
+    lbl_mmhg: TLabel;
+    lbl_pressao_atm: TLabel;
+    lbl_atm: TLabel;
+    lbl_c_2: TLabel;
+    lbl_k_2: TLabel;
+    lbl_termometro_umido_k: TLabel;
+    lbl_res_pmv: TLabel;
+    lbl_kPa_2: TLabel;
+    lbl_kPa_3: TLabel;
+    lbl_pressaovapor: TLabel;
+    Label1: TLabel;
+    procedure btbtn_calcClick(Sender: TObject);
+    procedure edt_pressaoChange(Sender: TObject);
+    procedure edt_temp_secoChange(Sender: TObject);
+    procedure edt_temp_umidoChange(Sender: TObject);
+    procedure About1Click(Sender: TObject);
+    procedure F(Sender: TObject; var Action: TCloseAction);
+    procedure edt_temp_secoKeyPress(Sender: TObject; var Key: Char);
+    procedure edt_temp_umidoKeyPress(Sender: TObject; var Key: Char);
+    procedure edt_pressaoKeyPress(Sender: TObject; var Key: Char);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+uses Unit2;
+
+{$R *.dfm}
+
+procedure TForm1.btbtn_calcClick(Sender: TObject);
+var
+  ts: Extended;
+  tu: Extended;
+  p: Extended;
+  pmv: Extended;
+  pv: Extended;
+  ur: Extended;
+  po: Extended;
+  pok: Extended;
+begin
+  ts := StrToFloat(edt_temp_seco.Text);
+  tu := StrToFloat(edt_temp_umido.Text);
+  p := StrToFloat(edt_pressao.Text);
+  pmv := 0.611*Math.Power(10,((7.4872*ts)/(237.3+ts)));
+  lbl_res_pmv.Caption := FloatToStrF(pmv,ffFixed,4,3);
+  pv := 0.611*Math.Power(10,((7.4872*tu)/(237.3+tu)))-8*Math.Power(10,-4)*p*(ts-tu);
+  lbl_pressaovapor.Caption := FloatToStrF(pv,ffFixed,4,3);
+  ur := (pv/pmv)*100;
+  lbl_umidade_result.Caption := FloatToStrF(ur,ffFixed,3,2);
+  po := 237.3*Math.Log10(pv/0.611)/((7.5-Math.Log10(pv/0.611)));
+  lbl_res_orv_c.Caption := FloatToStrF(po,ffFixed,3,2);
+  pok := po + 273.15;
+  lbl_res_orv_k.Caption := FloatToStrF(pok,ffFixed,4,2);
+end;
+
+procedure TForm1.edt_pressaoChange(Sender: TObject);
+var
+  A: Real;
+  B: Real;
+  C: Real;
+begin
+  if(edt_pressao.Text <> '') then
+    begin
+    A := StrToFloat(edt_pressao.Text);
+    B := ((A*760)/101.3);
+    lbl_pressao_mmhg.Caption := FloatToStrF(B,ffFixed,4,1);
+    C := ((A*1.000)/101.3);
+    lbl_pressao_atm.Caption := FloatToStrF(C,ffFixed,2,3);
+  end;
+end;
+
+procedure TForm1.edt_temp_secoChange(Sender: TObject);
+var
+  A: Real;
+  B: Real;
+begin
+  if(edt_temp_seco.Text <> '')
+  then
+    begin
+    A := StrToFloat(edt_temp_seco.Text);
+    B := (A + 273.15);
+    lbl_termometro_seco_k.Caption := FloatToStrF(B,ffFixed,4,2);
+    end;
+
+end;
+
+procedure TForm1.edt_temp_umidoChange(Sender: TObject);
+var
+  A: Real;
+  B: Real;
+begin
+  if(edt_temp_umido.Text <> '') then
+    begin
+    A := StrToFloat(edt_temp_umido.Text);
+    B := (A + 273.15);
+    lbl_termometro_umido_k.Caption := FloatToStrF(B,ffFixed,4,2);
+    end;
+
+end;
+
+procedure TForm1.About1Click(Sender: TObject);
+begin
+  f_about.Show;
+end;
+
+procedure TForm1.F(Sender: TObject; var Action: TCloseAction);
+begin
+  Application.Destroy;
+end;
+
+procedure TForm1.edt_temp_secoKeyPress(Sender: TObject; var Key: Char);
+begin
+  if (not (Key in['0'..'9',Chr(8)])) and (not (Key = ',')) then Key:= #0;
+end;
+
+procedure TForm1.edt_temp_umidoKeyPress(Sender: TObject; var Key: Char);
+begin
+  if (not (Key in['0'..'9',Chr(8)])) and (not (Key = ',')) then Key:= #0;
+end;
+
+procedure TForm1.edt_pressaoKeyPress(Sender: TObject; var Key: Char);
+begin
+  if (not (Key in['0'..'9',Chr(8)])) and (not (Key = ',')) then Key:= #0;
+end;
+
+end.
