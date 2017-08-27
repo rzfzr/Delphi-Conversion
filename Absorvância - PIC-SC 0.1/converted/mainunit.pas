@@ -1,0 +1,766 @@
+unit mainunit;
+
+{$MODE Delphi}
+
+interface
+
+uses
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ExtCtrls, StdCtrls, ExtDlgs, {ColorGrd,} Menus, Buttons;
+
+type
+  TMain = class(TForm)
+    ImageScroll: TScrollBox;
+    ProceedButton: TButton;
+    LoadImageDialog: TOpenPictureDialog;
+    Image: TImage;
+    //ColorGrid: TColorGrid;
+    CheckBoxInv: TCheckBox;
+    CheckBoxFill: TCheckBox;
+    AnalysisBox: TGroupBox;
+    Average: TLabel;
+    DesviationLabel: TLabel;
+    Desviation: TLabel;
+    LabelGeneralDesviation: TLabel;
+    ReadPixels: TLabel;
+    rmax: TLabel;
+    gmax: TLabel;
+    bmax: TLabel;
+    rmin: TLabel;
+    gmin: TLabel;
+    bmin: TLabel;
+    GroupBox1: TGroupBox;
+    GroupBox2: TGroupBox;
+    AnalFile: TButton;
+    WriteFile: TButton;
+    SaveDialog: TSaveDialog;
+    MainMenu1: TMainMenu;
+    RGB1: TMenuItem;
+    Absorvncia1: TMenuItem;
+    Grfico1: TMenuItem;
+    RadioButton1: TRadioButton;
+    RadioButton2: TRadioButton;
+    RadioButton3: TRadioButton;
+    BitBtn1: TBitBtn;
+    GroupBox3: TGroupBox;
+    LabelAverage: TLabel;
+    Image1: TImage;
+    Ajuda1: TMenuItem;
+    HELP1: TMenuItem;
+    procedure LoadButtonClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure GetMouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure ProceedButtonClick(Sender: TObject);
+    procedure CheckBoxInvClick(Sender: TObject);
+    procedure AnalFileClick(Sender: TObject);
+    procedure WriteFileClick(Sender: TObject);
+    procedure RGB1Click(Sender: TObject);
+    procedure Absorvncia1Click(Sender: TObject);
+    procedure Grfico1Click(Sender: TObject);
+    procedure BitBtn1Click(Sender: TObject);
+    procedure BitBtn3Click(Sender: TObject);
+    procedure HELP1Click(Sender: TObject);
+
+  private
+
+  public
+
+  end;
+
+var
+  Main: TMain;
+  x1,x2,y1,y2,xtmp: integer;
+  
+  r,tr,g,tg,b,tb: integer;
+  dr,dg,db,gd: extended;
+  maxr,maxg,maxb,minr,ming,minb: integer;
+  d: integer;
+  k: integer;
+  Done: boolean;
+  f: textfile;
+  control: boolean;
+  const v = '';//0.1 Shareware  SACHS, L.G.; et al. Software - Conversor in average RGB color <sachs@ffalm.br>';
+
+
+implementation
+
+uses Unit1, Unit2, Unit3;
+
+{$R *.lfm}
+  procedure TMain.FormCreate(Sender: TObject);
+  begin
+    ProceedButton.Enabled := false;
+    WriteFile.Enabled := false;
+    Main.Caption := 'PIC-SC 0.1 - Photometric Image Converter for Solution Concentration' + v;
+    Done := false;
+    control := true;
+
+    if FileExists('vi_mostra_de_ciencias.bmp') then
+      begin
+        Image.Picture.LoadFromFile('vi_mostra_de_ciencias.bmp');
+      end;
+  end;
+
+  procedure TMain.LoadButtonClick(Sender: TObject);
+  begin
+    image1.Hide;
+    if LoadImageDialog.Execute then
+      Image.Picture.LoadFromFile(LoadImageDialog.FileName);
+  end;
+
+  procedure TMain.GetMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+  begin
+  if control = true then
+  begin
+    ProceedButton.Enabled := false;
+    WriteFile.Enabled := false;
+    if not (LoadImageDialog.FileName = '') then
+        Image.Picture.LoadFromFile(LoadImageDialog.FileName);
+    Average.Caption := '';
+    Desviation.Caption := '';
+    RMax.Caption := 'R MAX.:   ';
+    GMax.Caption := 'G MAX.:   ';
+    BMax.Caption := 'B MAX.:   ';
+    RMin.Caption := 'R MIN.:   ';
+    GMin.Caption := 'G MIN.:   ';
+    BMin.Caption := 'B MIN.:   ';
+    ReadPixels.Caption := 'Leitura de Pixels';
+    LabelGeneralDesviation.Caption := 'Desvio Geral: ';
+    x1 := X;
+    y1 := Y;
+    control := false;
+  end
+  else
+  begin
+    x2 := X;
+    y2 := Y;
+
+    if x1 > x2 then
+      begin
+        xtmp  := x1;
+        x1    := x2;
+        x2    := xtmp;
+      end;
+
+    if y1 > y2 then
+      begin
+        xtmp  := y1;
+        y1    := y2;
+        y2    := xtmp;
+      end;
+
+    if not (LoadImageDialog.Filename = '' ) then
+      ProceedButton.Enabled := true;
+     control := true;
+  end;
+  end;
+
+  procedure TMain.ProceedButtonClick(Sender: TObject);
+  var
+    px,py: integer;
+
+  begin
+    if(RadioButton1.Checked = true) or (RadioButton2.Checked = true) or (RadioButton3.Checked = true) then   //Canvas só vai poder funcionar quando tiver habilitado o radiobutton especifico
+      begin
+    k :=  0;
+    tr := 0;tg := 0;tb := 0;
+    dr := 0;dg := 0;db := 0;
+    minr := 255; ming := 255;minb := 255;
+    maxr := 0; maxg := 0;maxb := 0;
+
+    ProceedButton.Enabled := false;
+
+    for px:=x1 to x2 do
+    for py:=y1 to y2 do
+      begin
+        r := GetRValue(Image.Picture.Bitmap.Canvas.Pixels[px,py]);
+        g := GetGValue(Image.Picture.Bitmap.Canvas.Pixels[px,py]);
+        b := GetBValue(Image.Picture.Bitmap.Canvas.Pixels[px,py]);
+
+
+
+        if r > maxr then
+                maxr := r
+        else
+            begin
+                if r < minr then
+                        minr := r;
+             end;
+
+        if g > maxg then
+                maxg := g
+        else
+            begin
+                if g < ming then
+                        ming := g;
+             end;
+
+        if b > maxb then
+                maxb := b
+        else
+            begin
+                if b < minb then
+                        minb := b;
+             end;
+
+        k := k + 1;
+        tr := tr + r;
+        tg := tg + g;
+        tb := tb + b;
+      end;
+
+
+    for px:=x1 to x2 do
+    for py:=y1 to y2 do
+      begin
+        if (k -1) = 0 then
+           begin
+                dr := Sqr(255);
+                dg := Sqr(255);
+                db := Sqr(255);
+                break;
+           end;
+
+        dr := dr + Sqr(GetRValue(Image.Picture.Bitmap.Canvas.Pixels[px,py]) - tr / k) / (k - 1) ;
+        dg := dg + Sqr(GetGValue(Image.Picture.Bitmap.Canvas.Pixels[px,py]) - tg / k) / (k - 1) ;
+        db := db + Sqr(GetBValue(Image.Picture.Bitmap.Canvas.Pixels[px,py]) - tb / k) / (k - 1) ;
+
+        if CheckBoxFill.Checked = false then
+        begin
+          if (px = x1) or (px = x2) or
+              (py = y1) or (py = y2)  then
+            begin
+                if ColorGrid.Enabled = true then
+                 Image.Picture.Bitmap.Canvas.Pixels[px,py]:=ColorGrid.ForegroundColor
+                else
+                 Image.Picture.Bitmap.Canvas.Pixels[px,py]:=rgb(GetRValue(Image.Picture.Bitmap.Canvas.Pixels[px,py]), 255 - GetGValue(Image.Picture.Bitmap.Canvas.Pixels[px,py]), 255 - GetBValue(Image.Picture.Bitmap.Canvas.Pixels[px,py]));
+           end;
+        end
+        else
+           begin
+                if ColorGrid.Enabled = true then
+                 Image.Picture.Bitmap.Canvas.Pixels[px,py]:=ColorGrid.ForegroundColor
+                else
+                 Image.Picture.Bitmap.Canvas.Pixels[px,py]:=rgb(255 - GetRValue(Image.Picture.Bitmap.Canvas.Pixels[px,py]), 255 - GetGValue(Image.Picture.Bitmap.Canvas.Pixels[px,py]), 255 - GetBValue(Image.Picture.Bitmap.Canvas.Pixels[px,py]));
+           end;
+      end;
+
+    dr := Sqrt(dr);
+    dg := Sqrt(dg);
+    db := Sqrt(db);
+    gd := ((dr + dg + db)/3);
+
+    if k = 1 then
+        begin
+        RMax.Caption := 'R MAX.:   ' + '  -  ';
+        GMax.Caption := 'G MAX.:   ' + '  -  ';
+        BMax.Caption := 'B MAX.:   ' + '  -  ';
+        RMin.Caption := 'R MIN.:   ' + '  -  ';
+        GMin.Caption := 'G MIN.:   ' + '  -  ';
+        BMin.Caption := 'B MIN.:   ' + '  -  ';
+        end
+    else
+        begin
+        RMax.Caption := 'R MAX.:   ' + IntToStr(maxr);
+        GMax.Caption := 'G MAX.:   ' + IntToStr(maxg);
+        BMax.Caption := 'B MAX.:   ' + IntToStr(maxb);
+        RMin.Caption := 'R MIN.:   ' + IntToStr(minr);
+        GMin.Caption := 'G MIN.:   ' + IntToStr(ming);
+        BMin.Caption := 'B MIN.:   ' + IntToStr(minb);
+        end;
+
+    ReadPixels.Caption := 'Leitura de Pixels:   ' + IntToStr(k);
+    LabelGeneralDesviation.Caption := 'Desvio Geral:  ' + Format('%f',[gd]);
+    Desviation.Caption := Format(' %f  %f  %f',[dr,dg,db]);
+    Average.Caption := Format('%d  %d  %d',[tr div k,tg div k,tb div k]);
+    if(RadioButton1.Checked = true) then  //vai para edit do branco
+    begin
+      Form1.Edit2.Text := Format('%d', [tr div k]);
+      Form1.Edit3.Text := Format('%d', [tg div k]);
+      Form1.Edit4.Text := Format('%d', [tb div k]);
+    end;
+    if(RadioButton2.Checked = true) then   // vai para o edit do padrão
+      begin
+        if(Form1.Edit17.Text = '') then
+          begin
+            Form1.Edit17.Text := Format('%d', [tr div k]);
+            Form1.Edit27.Text := Format('%d', [tg div k]);
+            Form1.Edit37.Text := Format('%d', [tb div k]);
+          end
+        else  if(Form1.Edit18.Text = '') then
+          begin
+            Form1.Edit18.Text := Format('%d', [tr div k]);
+            Form1.Edit28.Text := Format('%d', [tg div k]);
+            Form1.Edit38.Text := Format('%d', [tb div k]);
+            end
+        else  if(Form1.Edit19.Text = '') then
+          begin
+            Form1.Edit19.Text := Format('%d', [tr div k]);
+            Form1.Edit29.Text := Format('%d', [tg div k]);
+            Form1.Edit39.Text := Format('%d', [tb div k]);
+          end
+        else  if(Form1.Edit20.Text = '') then
+          begin
+            Form1.Edit20.Text := Format('%d', [tr div k]);
+            Form1.Edit30.Text := Format('%d', [tg div k]);
+            Form1.Edit40.Text := Format('%d', [tb div k]);
+          end
+        else  if(Form1.Edit21.Text = '') then
+          begin
+            Form1.Edit21.Text := Format('%d', [tr div k]);
+            Form1.Edit31.Text := Format('%d', [tg div k]);
+            Form1.Edit41.Text := Format('%d', [tb div k]);
+          end
+        else  if(Form1.Edit22.Text = '') then
+          begin
+            Form1.Edit22.Text := Format('%d', [tr div k]);
+            Form1.Edit32.Text := Format('%d', [tg div k]);
+            Form1.Edit42.Text := Format('%d', [tb div k]);
+          end
+        else  if(Form1.Edit23.Text = '') then
+          begin
+            Form1.Edit23.Text := Format('%d', [tr div k]);
+            Form1.Edit33.Text := Format('%d', [tg div k]);
+            Form1.Edit43.Text := Format('%d', [tb div k]);
+          end
+        else  if(Form1.Edit24.Text = '') then
+          begin
+            Form1.Edit24.Text := Format('%d', [tr div k]);
+            Form1.Edit34.Text := Format('%d', [tg div k]);
+            Form1.Edit44.Text := Format('%d', [tb div k]);
+          end
+        else  if(Form1.Edit25.Text = '') then
+          begin
+            Form1.Edit25.Text := Format('%d', [tr div k]);
+            Form1.Edit35.Text := Format('%d', [tg div k]);
+            Form1.Edit45.Text := Format('%d', [tb div k]);
+          end
+        else  if(Form1.Edit26.Text = '') then
+          begin
+            Form1.Edit26.Text := Format('%d', [tr div k]);
+            Form1.Edit36.Text := Format('%d', [tg div k]);
+            Form1.Edit46.Text := Format('%d', [tb div k]);
+          end       //fecha end dos ifs
+     end;  //fecha end final do radioButton do Padrao
+
+     if(RadioButton3.Checked = true) then   // vai para o edit da Amostra
+      begin
+        if(Form1.Edit48.Text = '') then
+          begin
+            Form1.Edit48.Text := Format('%d', [tr div k]);
+            Form1.Edit58.Text := Format('%d', [tg div k]);
+            Form1.Edit68.Text := Format('%d', [tb div k]);
+          end
+        else  if(Form1.Edit49.Text = '') then
+          begin
+            Form1.Edit49.Text := Format('%d', [tr div k]);
+            Form1.Edit59.Text := Format('%d', [tg div k]);
+            Form1.Edit69.Text := Format('%d', [tb div k]);
+            end
+        else  if(Form1.Edit50.Text = '') then
+          begin
+            Form1.Edit50.Text := Format('%d', [tr div k]);
+            Form1.Edit60.Text := Format('%d', [tg div k]);
+            Form1.Edit70.Text := Format('%d', [tb div k]);
+          end
+        else  if(Form1.Edit51.Text = '') then
+          begin
+            Form1.Edit51.Text := Format('%d', [tr div k]);
+            Form1.Edit61.Text := Format('%d', [tg div k]);
+            Form1.Edit71.Text := Format('%d', [tb div k]);
+          end
+        else  if(Form1.Edit52.Text = '') then
+          begin
+            Form1.Edit52.Text := Format('%d', [tr div k]);
+            Form1.Edit62.Text := Format('%d', [tg div k]);
+            Form1.Edit72.Text := Format('%d', [tb div k]);
+          end
+        else  if(Form1.Edit53.Text = '') then
+          begin
+            Form1.Edit53.Text := Format('%d', [tr div k]);
+            Form1.Edit63.Text := Format('%d', [tg div k]);
+            Form1.Edit73.Text := Format('%d', [tb div k]);
+          end
+        else  if(Form1.Edit54.Text = '') then
+          begin
+            Form1.Edit54.Text := Format('%d', [tr div k]);
+            Form1.Edit64.Text := Format('%d', [tg div k]);
+            Form1.Edit74.Text := Format('%d', [tb div k]);
+          end
+        else  if(Form1.Edit55.Text = '') then
+          begin
+            Form1.Edit55.Text := Format('%d', [tr div k]);
+            Form1.Edit65.Text := Format('%d', [tg div k]);
+            Form1.Edit75.Text := Format('%d', [tb div k]);
+          end
+        else  if(Form1.Edit56.Text = '') then
+          begin
+            Form1.Edit56.Text := Format('%d', [tr div k]);
+            Form1.Edit66.Text := Format('%d', [tg div k]);
+            Form1.Edit76.Text := Format('%d', [tb div k]);
+          end
+        else  if(Form1.Edit57.Text = '') then
+          begin
+            Form1.Edit57.Text := Format('%d', [tr div k]);
+            Form1.Edit67.Text := Format('%d', [tg div k]);
+            Form1.Edit77.Text := Format('%d', [tb div k]);
+          end       //fecha end dos ifs
+     end; // fecha end dos RadioButton da Amostra
+
+
+
+    if not (SaveDialog.FileName = '') then
+        WriteFile.Enabled := true;
+
+    Done := true;
+    end // fecha o begin dos ifs do RadioButton
+  else
+    begin
+      ShowMessage('Você deve selecionar branco, padrão ou amostra');
+    end;
+    end;
+  procedure TMain.CheckBoxInvClick(Sender: TObject);
+  begin
+    if ColorGrid.Enabled = false then
+      ColorGrid.Enabled := true
+    else
+      ColorGrid.Enabled := false;
+  end;
+
+  procedure TMain.AnalFileClick(Sender: TObject);
+  begin
+      if SaveDialog.Execute then
+        begin
+                AssignFile(f,SaveDialog.FileName);
+                Rewrite(f);
+                AnalFile.Caption := 'Change';
+                Main.Caption := Format('SH2 ' + v + ' @ %s',[SaveDialog.FileName]);
+               if Done = true then
+                        begin
+                                WriteFile.Enabled := true;
+                                Done := false;
+                        end;
+                CloseFile(f);
+        end;
+
+  end;
+
+  procedure TMain.WriteFileClick(Sender: TObject);
+  begin
+              AssignFile(f,SaveDialog.FileName);
+              if FileExists(SaveDialog.FileName) = false then
+                Rewrite(f);
+              Append(f);
+              WriteLn(f,Format('%s : %d %d %d / %f %f %f / %f / '
+                               + 'RMAX: %d GMAX: %d BMAX: %d / '
+                               + 'RMIN: %d GMIN: %d BMIN: %d / '
+                               + '%d / xy1 %d %d  xy2 %d %d',
+                               [LoadImageDialog.FileName,tr div k,tg div k,tb div k,dr,dg,db,gd,
+                               maxr,maxg,maxb,minr,ming,minb,k,x1,y1,x2,y2]));
+              CloseFile(f);
+              WriteFile.Enabled := false;
+  end;
+procedure TMain.RGB1Click(Sender: TObject);
+begin
+  Form1.Show;
+  Main.Hide;
+end;
+
+procedure TMain.Absorvncia1Click(Sender: TObject);
+begin
+  Form2.Show;
+  Main.Hide;
+end;
+
+procedure TMain.Grfico1Click(Sender: TObject);
+begin
+  Form3.Show;
+  Main.hide;
+end;
+
+procedure TMain.BitBtn1Click(Sender: TObject);
+begin
+    image1.Hide;
+    if LoadImageDialog.Execute then
+      Image.Picture.LoadFromFile(LoadImageDialog.FileName);
+  end;
+
+
+procedure TMain.BitBtn3Click(Sender: TObject);
+var
+    px,py: integer;
+begin
+    if(RadioButton1.Checked = true) or (RadioButton2.Checked = true) or (RadioButton3.Checked = true) then   //Canvas só vai poder funcionar quando tiver habilitado o radiobutton especifico
+      begin
+    k :=  0;
+    tr := 0;tg := 0;tb := 0;
+    dr := 0;dg := 0;db := 0;
+    minr := 255; ming := 255;minb := 255;
+    maxr := 0; maxg := 0;maxb := 0;
+
+    ProceedButton.Enabled := false;
+
+    for px:=x1 to x2 do
+    for py:=y1 to y2 do
+      begin
+        r := GetRValue(Image.Picture.Bitmap.Canvas.Pixels[px,py]);
+        g := GetGValue(Image.Picture.Bitmap.Canvas.Pixels[px,py]);
+        b := GetBValue(Image.Picture.Bitmap.Canvas.Pixels[px,py]);
+
+
+
+        if r > maxr then
+                maxr := r
+        else
+            begin
+                if r < minr then
+                        minr := r;
+             end;
+
+        if g > maxg then
+                maxg := g
+        else
+            begin
+                if g < ming then
+                        ming := g;
+             end;
+
+        if b > maxb then
+                maxb := b
+        else
+            begin
+                if b < minb then
+                        minb := b;
+             end;
+
+        k := k + 1;
+        tr := tr + r;
+        tg := tg + g;
+        tb := tb + b;
+      end;
+
+
+    for px:=x1 to x2 do
+    for py:=y1 to y2 do
+      begin
+        if (k -1) = 0 then
+           begin
+                dr := Sqr(255);
+                dg := Sqr(255);
+                db := Sqr(255);
+                break;
+           end;
+
+        dr := dr + Sqr(GetRValue(Image.Picture.Bitmap.Canvas.Pixels[px,py]) - tr / k) / (k - 1) ;
+        dg := dg + Sqr(GetGValue(Image.Picture.Bitmap.Canvas.Pixels[px,py]) - tg / k) / (k - 1) ;
+        db := db + Sqr(GetBValue(Image.Picture.Bitmap.Canvas.Pixels[px,py]) - tb / k) / (k - 1) ;
+
+        if CheckBoxFill.Checked = false then
+        begin
+          if (px = x1) or (px = x2) or
+              (py = y1) or (py = y2)  then
+            begin
+                if ColorGrid.Enabled = true then
+                 Image.Picture.Bitmap.Canvas.Pixels[px,py]:=ColorGrid.ForegroundColor
+                else
+                 Image.Picture.Bitmap.Canvas.Pixels[px,py]:=rgb(GetRValue(Image.Picture.Bitmap.Canvas.Pixels[px,py]), 255 - GetGValue(Image.Picture.Bitmap.Canvas.Pixels[px,py]), 255 - GetBValue(Image.Picture.Bitmap.Canvas.Pixels[px,py]));
+           end;
+        end
+        else
+           begin
+                if ColorGrid.Enabled = true then
+                 Image.Picture.Bitmap.Canvas.Pixels[px,py]:=ColorGrid.ForegroundColor
+                else
+                 Image.Picture.Bitmap.Canvas.Pixels[px,py]:=rgb(255 - GetRValue(Image.Picture.Bitmap.Canvas.Pixels[px,py]), 255 - GetGValue(Image.Picture.Bitmap.Canvas.Pixels[px,py]), 255 - GetBValue(Image.Picture.Bitmap.Canvas.Pixels[px,py]));
+           end;
+      end;
+
+    dr := Sqrt(dr);
+    dg := Sqrt(dg);
+    db := Sqrt(db);
+    gd := ((dr + dg + db)/3);
+
+    if k = 1 then
+        begin
+        RMax.Caption := 'R MAX.:   ' + '  -  ';
+        GMax.Caption := 'G MAX.:   ' + '  -  ';
+        BMax.Caption := 'B MAX.:   ' + '  -  ';
+        RMin.Caption := 'R MIN.:   ' + '  -  ';
+        GMin.Caption := 'G MIN.:   ' + '  -  ';
+        BMin.Caption := 'B MIN.:   ' + '  -  ';
+        end
+    else
+        begin
+        RMax.Caption := 'R MAX.:   ' + IntToStr(maxr);
+        GMax.Caption := 'G MAX.:   ' + IntToStr(maxg);
+        BMax.Caption := 'B MAX.:   ' + IntToStr(maxb);
+        RMin.Caption := 'R MIN.:   ' + IntToStr(minr);
+        GMin.Caption := 'G MIN.:   ' + IntToStr(ming);
+        BMin.Caption := 'B MIN.:   ' + IntToStr(minb);
+        end;
+
+    ReadPixels.Caption := 'Leitura de Pixels:   ' + IntToStr(k);
+    LabelGeneralDesviation.Caption := 'Desvio Geral:  ' + Format('%f',[gd]);
+    Desviation.Caption := Format(' %f  %f  %f',[dr,dg,db]);
+    Average.Caption := Format('%d  %d  %d',[tr div k,tg div k,tb div k]);
+    if(RadioButton1.Checked = true) then  //vai para edit do branco
+    begin
+      Form1.Edit2.Text := Format('%d', [tr div k]);
+      Form1.Edit3.Text := Format('%d', [tg div k]);
+      Form1.Edit4.Text := Format('%d', [tb div k]);
+    end;
+    if(RadioButton2.Checked = true) then   // vai para o edit do padrão
+      begin
+        if(Form1.Edit17.Text = '') then
+          begin
+            Form1.Edit17.Text := Format('%d', [tr div k]);
+            Form1.Edit27.Text := Format('%d', [tg div k]);
+            Form1.Edit37.Text := Format('%d', [tb div k]);
+          end
+        else  if(Form1.Edit18.Text = '') then
+          begin
+            Form1.Edit18.Text := Format('%d', [tr div k]);
+            Form1.Edit28.Text := Format('%d', [tg div k]);
+            Form1.Edit38.Text := Format('%d', [tb div k]);
+            end
+        else  if(Form1.Edit19.Text = '') then
+          begin
+            Form1.Edit19.Text := Format('%d', [tr div k]);
+            Form1.Edit29.Text := Format('%d', [tg div k]);
+            Form1.Edit39.Text := Format('%d', [tb div k]);
+          end
+        else  if(Form1.Edit20.Text = '') then
+          begin
+            Form1.Edit20.Text := Format('%d', [tr div k]);
+            Form1.Edit30.Text := Format('%d', [tg div k]);
+            Form1.Edit40.Text := Format('%d', [tb div k]);
+          end
+        else  if(Form1.Edit21.Text = '') then
+          begin
+            Form1.Edit21.Text := Format('%d', [tr div k]);
+            Form1.Edit31.Text := Format('%d', [tg div k]);
+            Form1.Edit41.Text := Format('%d', [tb div k]);
+          end
+        else  if(Form1.Edit22.Text = '') then
+          begin
+            Form1.Edit22.Text := Format('%d', [tr div k]);
+            Form1.Edit32.Text := Format('%d', [tg div k]);
+            Form1.Edit42.Text := Format('%d', [tb div k]);
+          end
+        else  if(Form1.Edit23.Text = '') then
+          begin
+            Form1.Edit23.Text := Format('%d', [tr div k]);
+            Form1.Edit33.Text := Format('%d', [tg div k]);
+            Form1.Edit43.Text := Format('%d', [tb div k]);
+          end
+        else  if(Form1.Edit24.Text = '') then
+          begin
+            Form1.Edit24.Text := Format('%d', [tr div k]);
+            Form1.Edit34.Text := Format('%d', [tg div k]);
+            Form1.Edit44.Text := Format('%d', [tb div k]);
+          end
+        else  if(Form1.Edit25.Text = '') then
+          begin
+            Form1.Edit25.Text := Format('%d', [tr div k]);
+            Form1.Edit35.Text := Format('%d', [tg div k]);
+            Form1.Edit45.Text := Format('%d', [tb div k]);
+          end
+        else  if(Form1.Edit26.Text = '') then
+          begin
+            Form1.Edit26.Text := Format('%d', [tr div k]);
+            Form1.Edit36.Text := Format('%d', [tg div k]);
+            Form1.Edit46.Text := Format('%d', [tb div k]);
+          end       //fecha end dos ifs
+     end;  //fecha end final do radioButton do Padrao
+
+     if(RadioButton3.Checked = true) then   // vai para o edit da Amostra
+      begin
+        if(Form1.Edit48.Text = '') then
+          begin
+            Form1.Edit48.Text := Format('%d', [tr div k]);
+            Form1.Edit58.Text := Format('%d', [tg div k]);
+            Form1.Edit68.Text := Format('%d', [tb div k]);
+          end
+        else  if(Form1.Edit49.Text = '') then
+          begin
+            Form1.Edit49.Text := Format('%d', [tr div k]);
+            Form1.Edit59.Text := Format('%d', [tg div k]);
+            Form1.Edit69.Text := Format('%d', [tb div k]);
+            end
+        else  if(Form1.Edit50.Text = '') then
+          begin
+            Form1.Edit50.Text := Format('%d', [tr div k]);
+            Form1.Edit60.Text := Format('%d', [tg div k]);
+            Form1.Edit70.Text := Format('%d', [tb div k]);
+          end
+        else  if(Form1.Edit51.Text = '') then
+          begin
+            Form1.Edit51.Text := Format('%d', [tr div k]);
+            Form1.Edit61.Text := Format('%d', [tg div k]);
+            Form1.Edit71.Text := Format('%d', [tb div k]);
+          end
+        else  if(Form1.Edit52.Text = '') then
+          begin
+            Form1.Edit52.Text := Format('%d', [tr div k]);
+            Form1.Edit62.Text := Format('%d', [tg div k]);
+            Form1.Edit72.Text := Format('%d', [tb div k]);
+          end
+        else  if(Form1.Edit53.Text = '') then
+          begin
+            Form1.Edit53.Text := Format('%d', [tr div k]);
+            Form1.Edit63.Text := Format('%d', [tg div k]);
+            Form1.Edit73.Text := Format('%d', [tb div k]);
+          end
+        else  if(Form1.Edit54.Text = '') then
+          begin
+            Form1.Edit54.Text := Format('%d', [tr div k]);
+            Form1.Edit64.Text := Format('%d', [tg div k]);
+            Form1.Edit74.Text := Format('%d', [tb div k]);
+          end
+        else  if(Form1.Edit55.Text = '') then
+          begin
+            Form1.Edit55.Text := Format('%d', [tr div k]);
+            Form1.Edit65.Text := Format('%d', [tg div k]);
+            Form1.Edit75.Text := Format('%d', [tb div k]);
+          end
+        else  if(Form1.Edit56.Text = '') then
+          begin
+            Form1.Edit56.Text := Format('%d', [tr div k]);
+            Form1.Edit66.Text := Format('%d', [tg div k]);
+            Form1.Edit76.Text := Format('%d', [tb div k]);
+          end
+        else  if(Form1.Edit57.Text = '') then
+          begin
+            Form1.Edit57.Text := Format('%d', [tr div k]);
+            Form1.Edit67.Text := Format('%d', [tg div k]);
+            Form1.Edit77.Text := Format('%d', [tb div k]);
+          end       //fecha end dos ifs
+     end; // fecha end dos RadioButton da Amostra
+
+
+
+    if not (SaveDialog.FileName = '') then
+        WriteFile.Enabled := true;
+
+    Done := true;
+    end // fecha o begin dos ifs do RadioButton
+  else
+    begin
+      ShowMessage('Você deve selecionar branco, padrão ou amostra');
+    end;
+
+end;
+
+procedure TMain.HELP1Click(Sender: TObject);
+begin
+showmessage('Procure sempre preencher todos os campos disponíveis');
+showmessage('A área é selecionada formando um quadrilátero via 2 cliques');
+showmessage('Para anotações dos dados obtidos de uma imagem clique no botão "Escrever no Arquivo" na página principal');
+showmessage('Você pode alterar a cor de preenchimento e efeitos relacionados na parte inferior da página principal');
+end;
+
+end.
+
+
+
