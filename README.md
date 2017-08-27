@@ -28,4 +28,11 @@ Strings went from .dfm to .lfm
 	
 *	SH1_2:  
 	Units not found: none  
+    Apparently keep all functionality  
+	Added about form  
+  
+*	SH2_0.2:  
+	Units not found: ColorGrd  
+	Not working
+	
    

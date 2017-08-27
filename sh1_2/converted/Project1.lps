@@ -8,20 +8,19 @@
       <Unit0>
         <Filename Value="Project1.lpr"/>
         <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
         <CursorPos X="20" Y="12"/>
         <UsageCount Value="20"/>
-        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit0>
       <Unit1>
         <Filename Value="Unit1.pas"/>
         <IsPartOfProject Value="True"/>
         <HasResources Value="True"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="5"/>
         <CursorPos X="26" Y="28"/>
         <UsageCount Value="20"/>
-        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit1>
       <Unit2>
@@ -46,47 +45,20 @@
       </Unit3>
       <Unit4>
         <Filename Value="Unit1.lfm"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="40"/>
         <CursorPos X="26" Y="54"/>
         <UsageCount Value="10"/>
-        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit4>
     </Units>
-    <JumpHistory Count="8" HistoryIndex="7">
-      <Position1>
-        <Filename Value="Unit1.pas"/>
-      </Position1>
-      <Position2>
-        <Filename Value="Unit1.lfm"/>
-      </Position2>
-      <Position3>
-        <Filename Value="Unit1.pas"/>
-        <Caret Line="18" Column="21"/>
-      </Position3>
-      <Position4>
-        <Filename Value="Unit1.pas"/>
-        <Caret Line="88" Column="24" TopLine="82"/>
-      </Position4>
-      <Position5>
-        <Filename Value="Unit1.pas"/>
-        <Caret Line="16" Column="11" TopLine="2"/>
-      </Position5>
-      <Position6>
-        <Filename Value="Unit1.pas"/>
-        <Caret Line="77" Column="5" TopLine="65"/>
-      </Position6>
-      <Position7>
-        <Filename Value="Unit1.pas"/>
-        <Caret Line="43" Column="16" TopLine="22"/>
-      </Position7>
-      <Position8>
-        <Filename Value="Unit1.pas"/>
-        <Caret Line="75" TopLine="62"/>
-      </Position8>
-    </JumpHistory>
+    <General>
+      <ActiveWindowIndexAtStart Value="-1"/>
+    </General>
+    <JumpHistory HistoryIndex="-1"/>
   </ProjectSession>
-  <SkipCheckLCLInterfaces Value="True"/>
 </CONFIG>

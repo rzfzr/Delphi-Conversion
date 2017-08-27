@@ -1,0 +1,50 @@
+Hint: * Converting file C:\Users\rzfzr\Desktop\GitGud\Delphi-Conversion\sh2_0.2\converted\extractrgb.dpr *
+Hint: Added defines -dBorland -dVer150 -dDelphi7 -dCompiler6_Up -dPUREPASCAL in custom options
+Hint: Found all unit files
+Hint: * Fixing used units for file C:\Users\rzfzr\Desktop\GitGud\Delphi-Conversion\sh2_0.2\converted\extractrgb.dpr *
+Hint: 
+Hint: *** Converting unit files belonging to project/package ***
+Hint: * Converting file C:\Users\rzfzr\Desktop\GitGud\Delphi-Conversion\sh2_0.2\converted\mainunit.pas *
+Hint: Replaced unit "Windows" with "LCLIntf, LCLType, LMessages" in uses section.
+Hint: 
+Hint: *** Fixing used units and Repairing form files ***
+Hint: * Repairing form file C:\Users\rzfzr\Desktop\GitGud\Delphi-Conversion\sh2_0.2\converted\mainunit.lfm *
+Hint: Removed property "TextHeight".
+Hint: Removed property "OldCreateOrder".
+Hint: Changed Top coord of TButton from "56" to "42" inside TGroupBox.
+Hint: Changed Left coord of TButton from "40" to "38" inside TGroupBox.
+Hint: Changed Top coord of TButton from "24" to "10" inside TGroupBox.
+Hint: Changed Left coord of TButton from "40" to "38" inside TGroupBox.
+Hint: Changed Top coord of TCheckBox from "40" to "26" inside TGroupBox.
+Hint: Changed Left coord of TCheckBox from "9" to "7" inside TGroupBox.
+Hint: Changed Top coord of TColorGrid from "65" to "51" inside TGroupBox.
+Hint: Changed Left coord of TColorGrid from "9" to "7" inside TGroupBox.
+Hint: Changed Top coord of TCheckBox from "24" to "10" inside TGroupBox.
+Hint: Changed Left coord of TCheckBox from "9" to "7" inside TGroupBox.
+Hint: Changed Top coord of TLabel from "132" to "118" inside TGroupBox.
+Hint: Changed Left coord of TLabel from "7" to "5" inside TGroupBox.
+Hint: Changed Top coord of TLabel from "116" to "102" inside TGroupBox.
+Hint: Changed Left coord of TLabel from "7" to "5" inside TGroupBox.
+Hint: Changed Top coord of TLabel from "100" to "86" inside TGroupBox.
+Hint: Changed Left coord of TLabel from "7" to "5" inside TGroupBox.
+Hint: Changed Top coord of TLabel from "76" to "62" inside TGroupBox.
+Hint: Changed Left coord of TLabel from "7" to "5" inside TGroupBox.
+Hint: Changed Top coord of TLabel from "60" to "46" inside TGroupBox.
+Hint: Changed Left coord of TLabel from "7" to "5" inside TGroupBox.
+Hint: Changed Top coord of TLabel from "44" to "30" inside TGroupBox.
+Hint: Changed Left coord of TLabel from "7" to "5" inside TGroupBox.
+Hint: Changed Top coord of TLabel from "20" to "6" inside TGroupBox.
+Hint: Changed Left coord of TLabel from "7" to "5" inside TGroupBox.
+Hint: Changed Top coord of TLabel from "236" to "222" inside TGroupBox.
+Hint: Changed Left coord of TLabel from "7" to "5" inside TGroupBox.
+Hint: Changed Top coord of TLabel from "212" to "198" inside TGroupBox.
+Hint: Changed Left coord of TLabel from "7" to "5" inside TGroupBox.
+Hint: Changed Top coord of TLabel from "196" to "182" inside TGroupBox.
+Hint: Changed Left coord of TLabel from "7" to "5" inside TGroupBox.
+Hint: Changed Top coord of TLabel from "156" to "142" inside TGroupBox.
+Hint: Changed Left coord of TLabel from "7" to "5" inside TGroupBox.
+Hint: Changed Top coord of TLabel from "172" to "158" inside TGroupBox.
+Hint: Changed Left coord of TLabel from "7" to "5" inside TGroupBox.
+Hint: * Fixing used units for file C:\Users\rzfzr\Desktop\GitGud\Delphi-Conversion\sh2_0.2\converted\mainunit.pas *
+Hint: Conversion took: 00:01:05
+Hint: Conversion Ready.
