@@ -8,9 +8,8 @@
       <Unit0>
         <Filename Value="SFP.lpr"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <CursorPos X="18" Y="8"/>
-        <UsageCount Value="24"/>
+        <UsageCount Value="25"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit0>
@@ -18,10 +17,9 @@
         <Filename Value="MainUnit.pas"/>
         <IsPartOfProject Value="True"/>
         <HasResources Value="True"/>
-        <EditorIndex Value="4"/>
-        <TopLine Value="531"/>
-        <CursorPos X="5" Y="545"/>
-        <UsageCount Value="24"/>
+        <EditorIndex Value="3"/>
+        <CursorPos X="13" Y="143"/>
+        <UsageCount Value="25"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit1>
@@ -29,7 +27,7 @@
         <Filename Value="SFPLib.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="24"/>
+        <UsageCount Value="25"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit2>
       <Unit3>
@@ -39,9 +37,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit2"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <CursorPos X="9" Y="3"/>
-        <UsageCount Value="24"/>
+        <CursorPos X="17" Y="15"/>
+        <UsageCount Value="25"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit3>
@@ -55,7 +54,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="11"/>
         <CursorPos X="3" Y="33"/>
-        <UsageCount Value="24"/>
+        <UsageCount Value="25"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit4>
       <Unit5>
@@ -75,7 +74,7 @@
       </Unit6>
       <Unit7>
         <Filename Value="unit1.lfm"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="4"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
@@ -86,15 +85,13 @@
         <ComponentName Value="Form3"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit3"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="-1"/>
         <CursorPos X="59" Y="18"/>
-        <UsageCount Value="20"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <UsageCount Value="21"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit8>
     </Units>
-    <JumpHistory Count="15" HistoryIndex="14">
+    <JumpHistory Count="16" HistoryIndex="15">
       <Position1>
         <Filename Value="MainUnit.pas"/>
         <Caret Line="49" Column="29" TopLine="41"/>
@@ -155,6 +152,10 @@
         <Filename Value="SFP.lpr"/>
         <Caret Line="8" Column="8"/>
       </Position15>
+      <Position16>
+        <Filename Value="MainUnit.pas"/>
+        <Caret Line="542" Column="24" TopLine="531"/>
+      </Position16>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>
