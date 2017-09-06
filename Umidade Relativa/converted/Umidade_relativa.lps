@@ -8,9 +8,9 @@
       <Unit0>
         <Filename Value="Umidade_relativa.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="19" Y="6"/>
-        <UsageCount Value="20"/>
+        <CursorPos Y="18"/>
+        <UsageCount Value="25"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit0>
       <Unit1>
@@ -19,16 +19,17 @@
         <HasResources Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="9" Y="163"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="25"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit1>
       <Unit2>
         <Filename Value="Unit2.pas"/>
         <IsPartOfProject Value="True"/>
         <HasResources Value="True"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="3" Y="34"/>
-        <UsageCount Value="20"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="34" Y="21"/>
+        <UsageCount Value="25"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit2>
       <Unit3>
@@ -37,13 +38,13 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="1310"/>
         <CursorPos X="3" Y="1527"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit3>
       <Unit4>
         <Filename Value="C:\lazarus\lcl\lmessages.pp"/>
         <UnitName Value="LMessages"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit4>
       <Unit5>
         <Filename Value="Unit2.lfm"/>
@@ -51,15 +52,31 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="317"/>
-        <UsageCount Value="10"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="366"/>
+        <CursorPos X="65" Y="380"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit5>
     </Units>
-    <General>
-      <ActiveWindowIndexAtStart Value="-1"/>
-    </General>
-    <JumpHistory HistoryIndex="-1"/>
+    <JumpHistory Count="4" HistoryIndex="3">
+      <Position1>
+        <Filename Value="Umidade_relativa.lpr"/>
+        <Caret Line="12" Column="102"/>
+      </Position1>
+      <Position2>
+        <Filename Value="Umidade_relativa.lpr"/>
+        <Caret Line="18" Column="8"/>
+      </Position2>
+      <Position3>
+        <Filename Value="Unit2.lfm"/>
+        <Caret Line="22" Column="76"/>
+      </Position3>
+      <Position4>
+        <Filename Value="Unit2.lfm"/>
+        <Caret Line="273" Column="22" TopLine="237"/>
+      </Position4>
+    </JumpHistory>
   </ProjectSession>
 </CONFIG>
