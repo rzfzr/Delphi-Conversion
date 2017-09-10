@@ -356,7 +356,7 @@ object f_about: Tf_about
   end
   object Label14: TLabel
     Left = 22
-    Top = 270
+    Top = 290
     Width = 108
     Height = 13
     Caption = 'CHRISTIANE LUCIANA DA COSTA (Coordenadora)'
@@ -369,7 +369,7 @@ object f_about: Tf_about
   end
   object Label15: TLabel
     Left = 22
-    Top = 290
+    Top = 310
     Width = 108
     Height = 13
     Caption = 'FRANCISCO C. MAINARDES DA SILVA (Coordenador)'
@@ -382,7 +382,7 @@ object f_about: Tf_about
   end
   object Label16: TLabel
     Left = 22
-    Top = 310
+    Top = 330
     Width = 108
     Height = 13
     Caption = 'JULIANE PRISCILA DINIZ SACHS (Coordenadora)'
@@ -395,7 +395,7 @@ object f_about: Tf_about
   end
   object Label17: TLabel
     Left = 22
-    Top = 330
+    Top = 350
     Width = 108
     Height = 13
     Caption = 'PROFº DRº LUÍS GUILHERME SACHS (Orientador e Coordenador)'
