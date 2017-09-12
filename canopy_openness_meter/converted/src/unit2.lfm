@@ -1,7 +1,7 @@
 object f_about: Tf_about
-  Left = 707
+  Left = 715
   Height = 468
-  Top = 404
+  Top = 409
   Width = 496
   Caption = 'About'
   ClientHeight = 468
@@ -15,9 +15,9 @@ object f_about: Tf_about
   LCLVersion = '1.6.4.0'
   object Label1: TLabel
     Left = 55
-    Height = 59
+    Height = 46
     Top = 8
-    Width = 273
+    Width = 387
     Caption = 'Canopy Openness Meter'
     Font.CharSet = ANSI_CHARSET
     Font.Color = clBlue
@@ -27,7 +27,6 @@ object f_about: Tf_about
     ParentColor = False
     ParentFont = False
   end
-
   object Label3: TLabel
     Left = 8
     Height = 16
@@ -45,7 +44,7 @@ object f_about: Tf_about
     Left = 88
     Height = 16
     Top = 406
-    Width = 293
+    Width = 301
     Caption = '  Rodovia BR-369 Km 54, Vila Maria, CP 261'
     Font.Color = clWindowText
     Font.Height = -13
@@ -58,7 +57,7 @@ object f_about: Tf_about
     Left = 80
     Height = 16
     Top = 422
-    Width = 316
+    Width = 325
     Caption = 'CEP 86360-000 - Bandeirantes - Paraná - Brasil'
     Font.Color = clWindowText
     Font.Height = -13
@@ -71,7 +70,7 @@ object f_about: Tf_about
     Left = 56
     Height = 16
     Top = 438
-    Width = 377
+    Width = 283
     Caption = '                            Fone: +55 (43) 3542-8000'
     Font.Color = clWindowText
     Font.Height = -13
@@ -80,13 +79,11 @@ object f_about: Tf_about
     ParentColor = False
     ParentFont = False
   end
-
-
-    object Label47: TLabel
+  object Label47: TLabel
     Left = 22
     Height = 16
     Top = 90
-    Width = 235
+    Width = 300
     Caption = 'ADILSON DA SILVA MONTERO FILHO (I.C.)'
     Font.Color = clWindowText
     Font.Height = -13
@@ -99,7 +96,7 @@ object f_about: Tf_about
     Left = 22
     Height = 16
     Top = 110
-    Width = 235
+    Width = 180
     Caption = 'ALAN SALVANY FELINTO'
     Font.Color = clWindowText
     Font.Height = -13
@@ -108,11 +105,11 @@ object f_about: Tf_about
     ParentColor = False
     ParentFont = False
   end
-    object Label7: TLabel
+  object Label7: TLabel
     Left = 22
     Height = 16
     Top = 130
-    Width = 235
+    Width = 209
     Caption = 'ANTONIO PAULO PORTUGAL'
     Font.Color = clWindowText
     Font.Height = -13
@@ -125,7 +122,7 @@ object f_about: Tf_about
     Left = 22
     Height = 16
     Top = 150
-    Width = 382
+    Width = 279
     Caption = 'ERIKSON JULIO DE AGUIAR (I.C. CNPq)'
     Font.Color = clWindowText
     Font.Height = -13
@@ -164,7 +161,7 @@ object f_about: Tf_about
     Left = 22
     Height = 16
     Top = 210
-    Width = 207
+    Width = 232
     Caption = 'JULIANE PRISCILA DINIZ SACHS'
     Font.Color = clWindowText
     Font.Height = -13
@@ -177,7 +174,7 @@ object f_about: Tf_about
     Left = 22
     Height = 16
     Top = 230
-    Width = 264
+    Width = 207
     Caption = 'PAULA JIMENA DINIZ SACHS'
     Font.Color = clWindowText
     Font.Height = -13
@@ -190,7 +187,7 @@ object f_about: Tf_about
     Left = 22
     Height = 16
     Top = 250
-    Width = 251
+    Width = 264
     Caption = 'RAFAEL FIGUEIRA GONCALVES (I.C.)'
     Font.Color = clWindowText
     Font.Height = -13
@@ -203,7 +200,7 @@ object f_about: Tf_about
     Left = 22
     Height = 16
     Top = 270
-    Width = 354
+    Width = 137
     Caption = 'RAFAEL MEULMAN'
     Font.Color = clWindowText
     Font.Height = -13
@@ -216,7 +213,7 @@ object f_about: Tf_about
     Left = 22
     Height = 16
     Top = 290
-    Width = 374
+    Width = 251
     Caption = 'THIAGO GASPAR LEVIN (I.C. CNPq)'
     Font.Color = clWindowText
     Font.Height = -13
@@ -229,7 +226,7 @@ object f_about: Tf_about
     Left = 22
     Height = 16
     Top = 330
-    Width = 459
+    Width = 376
     Caption = 'LUÍS GUILHERME SACHS (Orientador e Coordenador)'
     Font.Color = clWindowText
     Font.Height = -13
@@ -239,4 +236,3 @@ object f_about: Tf_about
     ParentFont = False
   end
 end
-

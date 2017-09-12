@@ -87,7 +87,7 @@ object f_about: Tf_about
     Height = 16
     Top = 90
     Width = 235
-    Caption = 'CHRISTIANE LUCIANA DA COSTA'
+    Caption = 'ADILSON DA SILVA MONTERO FILHO (I.C.)'
     Font.Color = clWindowText
     Font.Height = -13
     Font.Name = 'MS Sans Serif'
@@ -100,7 +100,7 @@ object f_about: Tf_about
     Height = 16
     Top = 110
     Width = 235
-    Caption = 'CHRISTIANE LUCIANA DA COSTA'
+    Caption = 'ALAN SALVANY FELINTO'
     Font.Color = clWindowText
     Font.Height = -13
     Font.Name = 'MS Sans Serif'
@@ -113,7 +113,7 @@ object f_about: Tf_about
     Height = 16
     Top = 130
     Width = 235
-    Caption = 'CHRISTIANE LUCIANA DA COSTA'
+    Caption = 'ANTONIO PAULO PORTUGAL'
     Font.Color = clWindowText
     Font.Height = -13
     Font.Name = 'MS Sans Serif'
@@ -139,7 +139,7 @@ object f_about: Tf_about
     Height = 16
     Top = 170
     Width = 144
-    Caption = 'FÁBIO PLACCA TAGLIATELA (I.C. Fundação Araucária)'
+    Caption = 'GUILHERME SACHS'
     Font.Color = clWindowText
     Font.Height = -13
     Font.Name = 'MS Sans Serif'
@@ -152,7 +152,7 @@ object f_about: Tf_about
     Height = 16
     Top = 190
     Width = 221
-    Caption = 'FRANCISCO C. MAINARDES DA SILVA'
+    Caption = 'GUSTAVO OLIVEIRA DIAS (I.C.)'
     Font.Color = clWindowText
     Font.Height = -13
     Font.Name = 'MS Sans Serif'
@@ -165,7 +165,7 @@ object f_about: Tf_about
     Height = 16
     Top = 210
     Width = 207
-    Caption = 'GUILHERME SACHS'
+    Caption = 'JULIANE PRISCILA DINIZ SACHS'
     Font.Color = clWindowText
     Font.Height = -13
     Font.Name = 'MS Sans Serif'
@@ -178,7 +178,7 @@ object f_about: Tf_about
     Height = 16
     Top = 230
     Width = 264
-    Caption = 'GUSTAVO OLIVEIRA DIAS (I.C.)'
+    Caption = 'PAULA JIMENA DINIZ SACHS'
     Font.Color = clWindowText
     Font.Height = -13
     Font.Name = 'MS Sans Serif'
@@ -191,7 +191,7 @@ object f_about: Tf_about
     Height = 16
     Top = 250
     Width = 251
-    Caption = 'JULIANE PRISCILA DINIZ SACHS'
+    Caption = 'RAFAEL FIGUEIRA GONCALVES (I.C.)'
     Font.Color = clWindowText
     Font.Height = -13
     Font.Name = 'MS Sans Serif'
@@ -204,7 +204,7 @@ object f_about: Tf_about
     Height = 16
     Top = 270
     Width = 354
-    Caption = 'PAULA JIMENA DINIZ SACHS'
+    Caption = 'RAFAEL MEULMAN'
     Font.Color = clWindowText
     Font.Height = -13
     Font.Name = 'MS Sans Serif'
@@ -217,7 +217,7 @@ object f_about: Tf_about
     Height = 16
     Top = 290
     Width = 374
-    Caption = 'RAFAEL FIGUEIRA GONCALVES (I.C.)'
+    Caption = 'THIAGO GASPAR LEVIN (I.C. CNPq)'
     Font.Color = clWindowText
     Font.Height = -13
     Font.Name = 'MS Sans Serif'

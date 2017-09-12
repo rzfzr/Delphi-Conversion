@@ -5,7 +5,7 @@ program SFP;
 uses
   Forms, Interfaces,
   MainUnit in 'MainUnit.pas' {MainForm},
-  Unit3 in 'unit3.pas' {f_about};
+  Unit2 in 'unit2.pas' {f_about};
 
 {$R *.res}
 
