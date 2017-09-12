@@ -53,7 +53,7 @@ object f_about: Tf_about
     Height = 16
     Top = 406
     Width = 293
-    Caption = 'Rodovia BR-369 Km 54, Vila Maria, CP 261'
+    Caption = '  Rodovia BR-369 Km 54, Vila Maria, CP 261'
     Font.Color = clWindowText
     Font.Height = -13
     Font.Name = 'MS Sans Serif'
@@ -66,7 +66,7 @@ object f_about: Tf_about
     Height = 16
     Top = 422
     Width = 316
-    Caption = 'CEP 86360-000 - Bandeirantes - Parná - Brasil'
+    Caption = 'CEP 86360-000 - Bandeirantes - Paraná - Brasil'
     Font.Color = clWindowText
     Font.Height = -13
     Font.Name = 'MS Sans Serif'
@@ -79,7 +79,7 @@ object f_about: Tf_about
     Height = 16
     Top = 438
     Width = 377
-    Caption = 'Fone: +55(0xx43) 3542 8000 | Fax: +55(0xx43) 3542 8008'
+    Caption = '                            Fone: +55 (43) 3542-8000'
     Font.Color = clWindowText
     Font.Height = -13
     Font.Name = 'MS Sans Serif'
@@ -270,7 +270,7 @@ object f_about: Tf_about
     Height = 16
     Top = 130
     Width = 235
-    Caption = 'ERIKSON JULIO DE AGUIAR (I.C.)'
+    Caption = 'CHRISTIANE LUCIANA DA COSTA'
     Font.Color = clWindowText
     Font.Height = -13
     Font.Name = 'MS Sans Serif'
@@ -283,7 +283,7 @@ object f_about: Tf_about
     Height = 16
     Top = 150
     Width = 382
-    Caption = 'FÁBIO PLACCA TAGLIATELA (I.C. Fundação Araucária)'
+    Caption = 'ERIKSON JULIO DE AGUIAR (I.C. CNPq)'
     Font.Color = clWindowText
     Font.Height = -13
     Font.Name = 'MS Sans Serif'
@@ -296,7 +296,7 @@ object f_about: Tf_about
     Height = 16
     Top = 170
     Width = 144
-    Caption = 'GUILHERME SACHS'
+    Caption = 'FÁBIO PLACCA TAGLIATELA (I.C. Fundação Araucária)'
     Font.Color = clWindowText
     Font.Height = -13
     Font.Name = 'MS Sans Serif'
@@ -309,7 +309,7 @@ object f_about: Tf_about
     Height = 16
     Top = 190
     Width = 221
-    Caption = 'GUSTAVO OLIVEIRA DIAS (I.C.)'
+    Caption = 'FRANCISCO C. MAINARDES DA SILVA'
     Font.Color = clWindowText
     Font.Height = -13
     Font.Name = 'MS Sans Serif'
@@ -322,7 +322,7 @@ object f_about: Tf_about
     Height = 16
     Top = 210
     Width = 207
-    Caption = 'PAULA JIMENA DINIZ SACHS'
+    Caption = 'GUILHERME SACHS'
     Font.Color = clWindowText
     Font.Height = -13
     Font.Name = 'MS Sans Serif'
@@ -335,7 +335,7 @@ object f_about: Tf_about
     Height = 16
     Top = 230
     Width = 264
-    Caption = 'RAFAEL FIGUEIRA GONCALVES (I.C.)'
+    Caption = 'GUSTAVO OLIVEIRA DIAS (I.C.)'
     Font.Color = clWindowText
     Font.Height = -13
     Font.Name = 'MS Sans Serif'
@@ -348,7 +348,7 @@ object f_about: Tf_about
     Height = 16
     Top = 250
     Width = 251
-    Caption = 'THIAGO GASPAR LEVIN (I.C. CNPq)'
+    Caption = 'JULIANE PRISCILA DINIZ SACHS'
     Font.Color = clWindowText
     Font.Height = -13
     Font.Name = 'MS Sans Serif'
@@ -359,9 +359,9 @@ object f_about: Tf_about
   object Label14: TLabel
     Left = 22
     Height = 16
-    Top = 290
+    Top = 270
     Width = 354
-    Caption = 'CHRISTIANE LUCIANA DA COSTA (Coordenadora)'
+    Caption = 'PAULA JIMENA DINIZ SACHS'
     Font.Color = clWindowText
     Font.Height = -13
     Font.Name = 'MS Sans Serif'
@@ -372,9 +372,9 @@ object f_about: Tf_about
   object Label15: TLabel
     Left = 22
     Height = 16
-    Top = 310
+    Top = 290
     Width = 374
-    Caption = 'FRANCISCO C. MAINARDES DA SILVA (Coordenador)'
+    Caption = 'RAFAEL FIGUEIRA GONCALVES (I.C.)'
     Font.Color = clWindowText
     Font.Height = -13
     Font.Name = 'MS Sans Serif'
@@ -385,9 +385,9 @@ object f_about: Tf_about
   object Label16: TLabel
     Left = 22
     Height = 16
-    Top = 330
+    Top = 310
     Width = 346
-    Caption = 'JULIANE PRISCILA DINIZ SACHS (Coordenadora)'
+    Caption = 'THIAGO GASPAR LEVIN (I.C. CNPq)'
     Font.Color = clWindowText
     Font.Height = -13
     Font.Name = 'MS Sans Serif'
@@ -400,7 +400,7 @@ object f_about: Tf_about
     Height = 16
     Top = 350
     Width = 459
-    Caption = 'PROFº DRº LUÍS GUILHERME SACHS (Orientador e Coordenador)'
+    Caption = 'LUÍS GUILHERME SACHS (Orientador e Coordenador)'
     Font.Color = clWindowText
     Font.Height = -13
     Font.Name = 'MS Sans Serif'
