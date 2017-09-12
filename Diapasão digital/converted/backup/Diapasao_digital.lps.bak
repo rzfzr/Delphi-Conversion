@@ -4,13 +4,13 @@
     <PathDelim Value="\"/>
     <Version Value="10"/>
     <BuildModes Active="Default"/>
-    <Units Count="2">
+    <Units Count="4">
       <Unit0>
         <Filename Value="Diapasao_digital.lpr"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <CursorPos X="27" Y="8"/>
-        <UsageCount Value="20"/>
+        <EditorIndex Value="2"/>
+        <CursorPos Y="15"/>
+        <UsageCount Value="21"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit0>
@@ -18,22 +18,45 @@
         <Filename Value="Diapasao.pas"/>
         <IsPartOfProject Value="True"/>
         <HasResources Value="True"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="170"/>
-        <CursorPos X="31" Y="178"/>
-        <UsageCount Value="20"/>
+        <CursorPos X="9" Y="435"/>
+        <UsageCount Value="21"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit1>
+      <Unit2>
+        <Filename Value="Diapasao.lfm"/>
+        <ComponentName Value="Main"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="14" Y="5"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="C:\lazarus\lcl\include\control.inc"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="3175"/>
+        <CursorPos Y="3197"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit3>
     </Units>
-    <JumpHistory Count="2" HistoryIndex="1">
+    <JumpHistory Count="3" HistoryIndex="2">
       <Position1>
-        <Filename Value="Diapasao_digital.lpr"/>
+        <Filename Value="Diapasao.lfm"/>
+        <Caret Line="108" Column="3" TopLine="65"/>
       </Position1>
       <Position2>
-        <Filename Value="Diapasao.pas"/>
+        <Filename Value="Diapasao_digital.lpr"/>
+        <Caret Line="8" Column="27"/>
       </Position2>
+      <Position3>
+        <Filename Value="Diapasao_digital.lpr"/>
+        <Caret Line="15" Column="5"/>
+      </Position3>
     </JumpHistory>
   </ProjectSession>
-  <SkipCheckLCLInterfaces Value="True"/>
 </CONFIG>
