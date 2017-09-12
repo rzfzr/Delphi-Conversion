@@ -1,8 +1,201 @@
-object Form1: TForm1
-  Left = 176
-  Height = 240
-  Top = 139
-  Width = 320
-  Caption = 'Form1'
-  LCLVersion = '1.6.4.0'
+object f_about: Tf_about
+  Left = 269
+  Top = 187
+  Width = 496
+  Height = 468
+  Caption = 'About'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -24
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  Position = poScreenCenter
+  OnClose = FormClose
+  PixelsPerInch = 96
+  object Label1: TLabel
+    Left = 120
+    Top = 8
+    Width = 278
+    Height = 59
+    Caption = 'Team'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clBlue
+    Font.Height = -48
+    Font.Name = 'Calibri'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 8
+    Height = 16
+    Top = 390
+    Width = 471
+    Caption = 'Universidade Estadual do Norte do Paraná - Campus Luiz Meneghel'
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 88
+    Height = 16
+    Top = 406
+    Width = 293
+    Caption = '  Rodovia BR-369 Km 54, Vila Maria, CP 261'
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 80
+    Height = 16
+    Top = 422
+    Width = 316
+    Caption = 'CEP 86360-000 - Bandeirantes - Paraná - Brasil'
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label6: TLabel
+    Left = 56
+    Height = 16
+    Top = 438
+    Width = 377
+    Caption = '                            Fone: +55 (43) 3542-8000'
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+
+  object Label7: TLabel
+    Left = 22
+    Height = 16
+    Top = 130
+    Width = 235
+    Caption = 'ALAN SALVANY FELINTO'
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label8: TLabel
+    Left = 22
+    Height = 16
+    Top = 150
+    Width = 382
+    Caption = 'ANTONIO PAULO PORTUGAL'
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label9: TLabel
+    Left = 22
+    Height = 16
+    Top = 170
+    Width = 144
+    Caption = 'ERIKSON JULIO DE AGUIAR (I.C. CNPq)'
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label10: TLabel
+    Left = 22
+    Height = 16
+    Top = 190
+    Width = 221
+    Caption = 'GUILHERME SACHS'
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label11: TLabel
+    Left = 22
+    Height = 16
+    Top = 210
+    Width = 207
+    Caption = 'GUSTAVO OLIVEIRA DIAS (I.C.)'
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label12: TLabel
+    Left = 22
+    Height = 16
+    Top = 230
+    Width = 264
+    Caption = 'GUSTAVO ROBERTO NARDON MEIRA (I.C.)'
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label13: TLabel
+    Left = 22
+    Height = 16
+    Top = 250
+    Width = 251
+    Caption = 'JULIANE PRISCILA DINIZ SACHS'
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label14: TLabel
+    Left = 22
+    Height = 16
+    Top = 270
+    Width = 354
+    Caption = 'RAFAEL FIGUEIRA GONCALVES (I.C.)'
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+
+  object Label17: TLabel
+    Left = 22
+    Height = 16
+    Top = 310
+    Width = 459
+    Caption = 'LUÍS GUILHERME SACHS (Orientador e Coordenador'
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
 end
+
